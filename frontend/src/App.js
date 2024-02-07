@@ -28,7 +28,12 @@ import {
 } from "./pages/Routes.js";
 import {
   ShopHomePage,
-  ShopDashboardPage 
+  ShopDashboardPage,
+  ShopCreateProduct,
+  ShopAllProducts,
+  ShopCreateEvent,
+  ShopAllEvents,
+  ShopAllCoupons
 } from "./pages/shop/ShopRoutes";
 
 
@@ -77,14 +82,39 @@ function App() {
         <Route path="/shop-create" element={<ShopCreatePage />} />
         <Route path="/shop-login" element={<ShopLoginPage />} />
         <Route path="/shop/:id" element={
-          // <SellerProtectedRoute>
+          <SellerProtectedRoute>
             <ShopHomePage />
-          // </SellerProtectedRoute>
+           </SellerProtectedRoute>
         } />
         <Route path="/dashboard" element={
-          // <SellerProtectedRoute >
+          <SellerProtectedRoute >
             <ShopDashboardPage />
-          // </SellerProtectedRoute>
+          </SellerProtectedRoute>
+        } />
+        <Route path="/dashboard-create-product" element={
+          <SellerProtectedRoute >
+            <ShopCreateProduct />
+          </SellerProtectedRoute>
+        } />
+        <Route path="/dashboard-products" element={
+          <SellerProtectedRoute >
+            <ShopAllProducts/>
+          </SellerProtectedRoute>
+        } />
+        <Route path="/dashboard-create-event" element={
+          <SellerProtectedRoute >
+            <ShopCreateEvent/>
+          </SellerProtectedRoute>
+        } />
+        <Route path="/dashboard-events" element={
+          <SellerProtectedRoute >
+            <ShopAllEvents/>
+          </SellerProtectedRoute>
+        } />
+        <Route path="/dashboard-coupons" element={
+          <SellerProtectedRoute >
+            <ShopAllCoupons/>
+          </SellerProtectedRoute>
         } />
 
       </Routes>
